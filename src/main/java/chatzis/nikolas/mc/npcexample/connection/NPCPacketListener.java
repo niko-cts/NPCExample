@@ -1,4 +1,4 @@
-package chatzis.nikolas.mc.npcsystem.utils;
+package chatzis.nikolas.mc.npcexample.connection;
 
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.Packet;

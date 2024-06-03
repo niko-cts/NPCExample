@@ -1,6 +1,6 @@
-package chatzis.nikolas.mc.npcsystem.utils;
+package chatzis.nikolas.mc.npcexample.connection;
 
-import chatzis.nikolas.mc.nikoapi.util.ReflectionHelper;
+import chatzis.nikolas.mc.npcexample.NPCExample;
 import net.minecraft.network.Connection;
 import net.minecraft.network.PacketListener;
 import net.minecraft.network.PacketSendListener;
@@ -8,6 +8,7 @@ import net.minecraft.network.ProtocolInfo;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.PacketFlow;
 
+import java.lang.reflect.Field;
 import java.net.SocketAddress;
 
 public class NPCConnection extends Connection {
@@ -15,11 +16,8 @@ public class NPCConnection extends Connection {
     public NPCConnection(PacketFlow flag) {
         super(flag);
         channel = new NPCChannel(null);
-        address = new SocketAddress() {
-            //private static final long serialVersionUID = 8207338859896320185L;
-        };
+        address = new SocketAddress() {};
     }
-
 
     @Override
     public PacketFlow getReceiving() {
@@ -55,10 +53,18 @@ public class NPCConnection extends Connection {
     @Override
     public void setListenerForServerboundHandshake(PacketListener pl) {
         try {
-            ReflectionHelper.set(Connection.class, this, "q", pl);
-            ReflectionHelper.set(Connection.class, this, "p", null);
-        } catch (Throwable e) {
-            e.printStackTrace();
+            Field field = Connection.class.getDeclaredField("q");
+            field.setAccessible(true);
+            field.set(this, pl);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            NPCExample.getInstance().getLogger().warning("Could not set packetListener for NPCConnection: " + e.getMessage());
+        }
+        try {
+            Field field = Connection.class.getDeclaredField("p");
+            field.setAccessible(true);
+            field.set(this, null);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            NPCExample.getInstance().getLogger().warning("Could not set disconnectListener for NPCConnection: " + e.getMessage());
         }
     }
 }

@@ -3,3 +3,8 @@ version: '${project.version}'
 main: chatzis.nikolas.mc.npcexample.NPCExample
 api-version: '1.20'
 authors: [Nikolas]
+
+commands:
+  npctest:
+    description: Will spawn a new npc or teleport/move the NPC to the players position.
+    usage: /npctest spawn/teleport/here

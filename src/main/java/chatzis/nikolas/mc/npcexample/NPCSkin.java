@@ -1,4 +1,4 @@
-package chatzis.nikolas.mc.npcsystem;
+package chatzis.nikolas.mc.npcexample;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package chatzis.nikolas.mc.npcsystem.utils;
+package chatzis.nikolas.mc.npcexample.connection;
 
 import io.netty.channel.*;
 
