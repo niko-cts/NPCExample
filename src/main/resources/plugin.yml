@@ -1,0 +1,5 @@
+name: NPCExample
+version: '${project.version}'
+main: chatzis.nikolas.mc.npcexample.NPCExample
+api-version: '1.20'
+authors: [Nikolas]
