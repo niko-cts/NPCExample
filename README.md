@@ -5,6 +5,8 @@ This is a test project demonstrating how to create and manage NPCs in Minecraft 
 2. Implementing pathfinding AI for NPCs without external libraries.
 3. Enabling knockback & falldamage for NPCs.
 
+For a detailed explanation about the code read this forum post: 
+
 ## Features
 
 ### Auto-respawn NPCs
