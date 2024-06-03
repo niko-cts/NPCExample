@@ -35,7 +35,7 @@ This is a test project demonstrating how to create and manage NPCs in Minecraft 
   `/npctest spawn/here/teleport`
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the GNU License. See the LICENSE file for details.
 
 ## Acknowledgements
 - Special thanks to the [forum post](https://www.spigotmc.org/threads/nms-serverplayer-entityplayer-for-the-1-17-1-18-mojang-mappings-with-fall-damage-and-knockback.551281/) for the initial knockback implementation.
